@@ -86,7 +86,9 @@ simpson_index = function(species_vector) {
   
   # return biodiversity index
   return(D)
-  }
+}
+
+source("data/power_gen_orig.R")
 ```
 
 # Assignment 4
