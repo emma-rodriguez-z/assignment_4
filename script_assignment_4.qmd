@@ -56,19 +56,19 @@ In this assignment, I created a function in R to calculate Simpson’s Index of 
 ## Simpson Index
 
 ```{r}
-#' Simpson's Index Function
-#'
-#' This function calculates Simpson's Index of biodiversity.
-#'
-#' @param species_vector vector containing species names for each individual
-#'
-#' @return Simpson's Index value between 0 and 1
-#'
-#' Uses the formula:
-#' D = sum((ni / N)^2)
-#'
-#' ni = number of individuals in each species
-#' N = total number of individuals
+# Simpson's Index Function
+
+# This function calculates Simpson's Index of biodiversity.
+
+# @param species_vector vector containing species names for each individual
+
+# @return Simpson's Index value between 0 and 1
+
+#Uses the formula:
+#  D = sum((ni / N)^2)
+
+#ni = number of individuals in each species
+#N = tota number of individuals
 
 simpson_index = function(species_vector) {
   
@@ -81,7 +81,7 @@ simpson_index = function(species_vector) {
   # calculate total number of individuals
   N = sum(species_counts)
   
-  # calculate Simpson's Index
+  # calculate Simpson Index
   D = sum((species_counts / N)^2)
   
   # return biodiversity index
@@ -116,19 +116,18 @@ The function first converts the species vector into a factor, then counts the nu
 
 ## Test 1
 
-species_example <- 
+species_example1 <- 
   c("poppy", "poppy", "poppy",
   "tulip", "tulip",
   "rose",
   "dasiy")
 
-simpson_index(species_example)
+simpson_index(species_example1)
 
 
 ```
 
 ```{r}
-
 
 ## Test 2
 
