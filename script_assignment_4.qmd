@@ -86,7 +86,7 @@ simpson_index = function(species_vector) {
   
   # return biodiversity index
   return(D)
-}
+  }
 ```
 
 # Assignment 4
@@ -116,12 +116,11 @@ The function first converts the species vector into a factor, then counts the nu
 
 ## Test 1
 
-species_example <- c(
-  "oak", "oak", "oak",
-  "pine", "pine",
-  "maple",
-  "redwood"
-)
+species_example <- 
+  c("poppy", "poppy", "poppy",
+  "tulip", "tulip",
+  "rose",
+  "dasiy")
 
 simpson_index(species_example)
 
@@ -133,11 +132,10 @@ simpson_index(species_example)
 
 ## Test 2
 
-species_example2 <- c(
-  "species_a", "species_a", "species_a",
+species_example2 <- 
+  c( "species_a", "species_a", "species_a",
   "species_b", "species_b", "species_b",
-  "species_c", "species_c", "species_c"
-)
+  "species_c", "species_c", "species_c" )
 
 simpson_index(species_example2)
 
@@ -147,13 +145,12 @@ simpson_index(species_example2)
 
 ## Test 3
 
-species_example3 <- c(
-  "fish",
+species_example3 <-
+  c("tuna",
   "crab",
   "shark",
   "eel",
-  "octopus"
-)
+  "mermaide")
 
 simpson_index(species_example3)
 ```
