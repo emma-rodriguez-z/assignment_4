@@ -1,0 +1,161 @@
+---
+title: "Assignment 4: Simpson's Index Function"
+author: "Emma"
+format: html
+editor: visual
+---
+
+```{=html}
+<style>
+body {
+  background-color: #f4f8f4;
+}
+
+h1 {
+  color: #2f5d50;
+  font-weight: bold;
+}
+
+h2 {
+  background-color: #7aa095;
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+h3 {
+  color: #2f5d50;
+}
+
+code {
+  color: #2f5d50;
+}
+</style>
+```
+
+## Intro
+
+In this assignment, I created a function in R to calculate Simpson’s Index of biodiversity. Simpson’s Index is used to measure biodiversity by considering both the number of species present and the abundance of each species within a sample. The function takes a vector of species names as input, counts the number of individuals in each species, and applies Simpson’s Index formula to calculate a biodiversity value between 0 and 1. I then tested the function using multiple example datasets to compare how different species distributions affect biodiversity.
+
+## Notes from Slides
+
+-   Functions in R should include comments both at the top of the function and within the function body to explain what the code is doing.
+
+-   Function documentation can later be used to automatically generate documentation when building R packages.
+
+-   Functions are often saved as separate `.R` files so they can be reused in multiple scripts or projects.
+
+-   Function files are commonly stored inside an `R` directory within a project.
+
+-   The `source()` function can be used to load external function files into a Quarto document or R script.
+
+-   The lecture example used `power_gen_orig.R` as a template for proper function formatting and documentation.
+
+-   Using functions helps organize code, improve readability, and make analyses easier to repeat and modify.
+
+## Simpson Index
+
+```{r}
+#' Simpson's Index Function
+#'
+#' This function calculates Simpson's Index of biodiversity.
+#'
+#' @param species_vector vector containing species names for each individual
+#'
+#' @return Simpson's Index value between 0 and 1
+#'
+#' Uses the formula:
+#' D = sum((ni / N)^2)
+#'
+#' ni = number of individuals in each species
+#' N = total number of individuals
+
+simpson_index = function(species_vector) {
+  
+  # convert species vector into a factor
+  species_factor = factor(species_vector)
+  
+  # count number of individuals in each species
+  species_counts = table(species_factor)
+  
+  # calculate total number of individuals
+  N = sum(species_counts)
+  
+  # calculate Simpson's Index
+  D = sum((species_counts / N)^2)
+  
+  # return biodiversity index
+  return(D)
+}
+```
+
+# Assignment 4
+
+## Function Contract
+
+This function calculates Simpsons Index of biodiversity.
+
+The input for the function is a vector containing species names for each individual in a sample.
+
+The output of the function is a numeric value between 0 and 1 that represents Simpsons Index.
+
+Simpsons Index:
+
+\[ D = \sum ((n_i/N)\^2) \]
+
+where:
+
+-   (n_i) = number of individuals in each species
+-   \(N\) = total number of individuals
+
+The function first converts the species vector into a factor, then counts the number of individuals in each species using `table()`. After that, it calculates the total number of individuals and computes Simpsons Index.
+
+## Function
+
+```{r}
+
+## Test 1
+
+species_example <- c(
+  "oak", "oak", "oak",
+  "pine", "pine",
+  "maple",
+  "redwood"
+)
+
+simpson_index(species_example)
+
+
+```
+
+```{r}
+
+
+## Test 2
+
+species_example2 <- c(
+  "species_a", "species_a", "species_a",
+  "species_b", "species_b", "species_b",
+  "species_c", "species_c", "species_c"
+)
+
+simpson_index(species_example2)
+
+```
+
+```{r}
+
+## Test 3
+
+species_example3 <- c(
+  "fish",
+  "crab",
+  "shark",
+  "eel",
+  "octopus"
+)
+
+simpson_index(species_example3)
+```
+
+In this assignment, I created a function in R to calculate Simpson’s Index of biodiversity. The function takes a vector of species names, counts the number of individuals in each species, and calculates the biodiversity index using Simpson’s formula. After testing the function with multiple example datasets, I found that samples with a more even distribution of species had lower Simpson’s Index values, while samples dominated by fewer species had higher values.
