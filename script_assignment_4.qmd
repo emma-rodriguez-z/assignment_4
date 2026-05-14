@@ -8,27 +8,27 @@ editor: visual
 ```{=html}
 <style>
 body {
-  background-color: #f4f8f4;
+  background-color: #FFD1DF;
 }
 
 h1 {
-  color: #2f5d50;
+  color: #FF61CC;
   font-weight: bold;
 }
 
 h2 {
-  background-color: #7aa095;
+  background-color: #FF61CC ;
   color: white;
   padding: 6px;
   border-radius: 6px;
 }
 
 h3 {
-  color: #2f5d50;
+  color: #FFFFFF;
 }
 
 code {
-  color: #2f5d50;
+  color: #FFFFFF;
 }
 </style>
 ```
