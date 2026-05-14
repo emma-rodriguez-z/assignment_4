@@ -1,6 +1,6 @@
 ---
 title: "Assignment 4: Simpson's Index Function"
-author: "Emma"
+author: "Emma Rodriguez"
 format: html
 editor: visual
 ---
